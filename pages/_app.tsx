@@ -5,7 +5,7 @@ const sdk = new ThirdwebSDK(Pulsechain, {
   clientId: "",
 
 const sdk = new ThirdwebSDK(Pulsechain, {
-  secretKey: "YOUR_SECRET_KEY",
+  secretKey: "",
 });
 
 const contract = await sdk.getContract("");
