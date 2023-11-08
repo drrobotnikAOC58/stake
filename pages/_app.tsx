@@ -1,22 +1,11 @@
-import type { AppProps } from "next/app";
-import { ThirdwebProvider } from "@thirdweb-dev/react";
-import { ChakraProvider } from "@chakra-ui/react";
-import Navbar from "../components/Navbar";
+import { Pulsechain } from "@thirdweb-dev/chains";
+import { ThirdwebSDK } from "@thirdweb-dev/sdk";
 
-// This is the chain your dApp will work on.
-// Change this to the chain your app is built for.
-// You can also import additional chains from `@thirdweb-dev/chains` and pass them directly.
-const activeChain = "mumbai";
+const sdk = new ThirdwebSDK(Pulsechain, {
+  clientId: "",
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <ThirdwebProvider activeChain={activeChain}>
-      <ChakraProvider>
-        <Navbar />
-        <Component {...pageProps} />
-      </ChakraProvider>
-    </ThirdwebProvider>
-  );
-}
+const sdk = new ThirdwebSDK(Pulsechain, {
+  secretKey: "YOUR_SECRET_KEY",
+});
 
-export default MyApp;
+const contract = await sdk.getContract("");
